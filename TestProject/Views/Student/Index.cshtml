@@ -23,7 +23,7 @@
     }))
 </script>
 
-<table class="table">
+<table class="table" id="myTable">
     <thead>
         <tr class="table-dark">
             <th>
@@ -70,3 +70,10 @@
     </tbody>
 </table>
 
+@section Script{
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>
+}
