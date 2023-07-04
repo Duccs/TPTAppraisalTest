@@ -94,16 +94,23 @@
                 <input asp-for="LastYearGrade" class="form-control" />
                 <span asp-validation-for="LastYearGrade" class="text-danger"></span>
             </div>
+            <br />
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
 <div>
-    <a asp-action="Index">Back to List</a>
+    <br />
+    <a class="btn btn-info" asp-action="Index">Back to List</a>
 </div>
+
+<br />
+<br />
+<br />
+<br />
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

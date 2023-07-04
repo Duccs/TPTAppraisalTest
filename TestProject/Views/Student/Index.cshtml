@@ -9,9 +9,23 @@
 <p>
     <a asp-action="Create" class="btn btn-primary">Create</a>
 </p>
+
+<script>
+    const containers = document.querySelectorAll('.rowHover');
+
+    containers.forEach(f => f.addEventListener('mouseenter', function () {
+        containers.forEach(e => {
+            var div = e.querySelector('tr');
+            div.classList.add('table-dark');
+            div.classList.remove('table-light');
+        })
+        this.querySelector('tr').classList.add('table-light')
+    }))
+</script>
+
 <table class="table">
     <thead>
-        <tr>
+        <tr class="table-dark">
             <th>
                 Icon
             </th>
@@ -30,7 +44,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr class="rowHover">
             <td>
                 <img src="~/images/@item.ProfileImageUrl" alt="@item.FirstName image" width="100">
             </td>
@@ -55,3 +69,4 @@
 }
     </tbody>
 </table>
+
